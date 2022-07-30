@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import CounterApp from './01-useState/CounterApp'
 import CounterWithCounterHook from './01-useState/CounterWithCounterHook'
+import FormWithCustomHook from './02-useEffect/FormWithCustomHook'
 import SimpleForm from './02-useEffect/SimpleForm'
 import { HooksApp } from './HooksApp'
 
@@ -12,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <HooksApp /> */}
     {/* <CounterApp/> */}
     {/* <CounterWithCounterHook/> */}
-    <SimpleForm/>
+    {/* <SimpleForm/> */}
+    <FormWithCustomHook/>
   </React.StrictMode>
 )
