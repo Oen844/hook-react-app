@@ -1,13 +1,18 @@
 
 import React from 'react'
-import { useFetch } from '../hooks/useFetch'
+import { useFetch } from '../hooks/useFetch';
+import { useCounter } from "../hooks/useCounter";
 
 export const MultipleCustomHooks = () => {
+  const {increment, counter}= useCounter(1);
+  
+  const url = `https://www.breakingbadapi.com/api/quotes/${counter}`;
 
-  const { data, isloading, hasError } = useFetch('https://www.breakingbadapi.com/api/quotes/1')
+  const { data, isloading, hasError } = useFetch(url)
 
   const { author, quote } = !!data && data[0];
 
+  
 
   if (isloading) {
 
@@ -27,12 +32,19 @@ export const MultipleCustomHooks = () => {
           : (
             <blockquote className='blockquote text-end'>
               <p className='mb-1'>{quote}</p>
-              <footer className='blockquote-footer'> {author}</footer>
+              <footer className='blockquote-footer mt-3'> {author}</footer>
             </blockquote>
+            
           )
       }
+      
 
-
+      <button 
+      onClick={() => increment()} 
+      className='btn btn-primary'
+      disabled = {isloading}>
+      next
+      </button>
 
     </>
   )
