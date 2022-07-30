@@ -1,7 +1,11 @@
 
 import React from 'react'
-import { useFetch } from '../hooks/useFetch';
-import { useCounter } from "../hooks/useCounter";
+
+import {useFetch, useCounter} from "../hooks"
+import LoadingQuote from './LoadingQuote';
+import Quote from './Quote';
+
+
 
 export const MultipleCustomHooks = () => {
   const {increment, counter, reset}= useCounter(1);
@@ -12,7 +16,7 @@ export const MultipleCustomHooks = () => {
 
   const { author, quote } = !!data && data[0];
 
-  
+
 
   if (isloading) {
 
@@ -23,22 +27,9 @@ export const MultipleCustomHooks = () => {
       <h1>Breaking Bad Quotes</h1>
       <hr />
 
-      {
-        isloading ? (
-          <div className='alert alert-info text-center'>
-            Loading...
-          </div>
-        )
-          : (
-            <blockquote className='blockquote text-end'>
-              <p className='mb-1'>{quote}</p>
-              <footer className='blockquote-footer mt-3'> {author}</footer>
-            </blockquote>
-            
-          )
-      }
+     
+      {isloading ? (<LoadingQuote />) : (<Quote quote = {quote} author= {author}/>)}
       
-
       <button 
       onClick={() => increment()} 
       className='btn btn-primary'
