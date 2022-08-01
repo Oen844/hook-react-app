@@ -10,6 +10,7 @@ import { Layout } from './05-useLayaoutEffect/Layout'
 import { CallbackHook } from './06-memos/CallbackHook'
 import { Memorize } from './06-memos/Memorize'
 import { MemorizeHook } from './06-memos/MemorizeHook'
+import { Padre } from './07-tarea-memo/Padre'
 import { HooksApp } from './HooksApp'
 
 import './index.css'
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <FocusScreen/> */}
     {/* <Layout/> */}
     {/* <MemorizeHook/> */}
-    <CallbackHook/>
+    {/* <CallbackHook/> */}
+    <Padre />
   </React.StrictMode>
 )
