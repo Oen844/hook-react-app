@@ -10,12 +10,13 @@ export const TodoAdd = ({ onNewTodo }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        if (description.lenght <= 1) return;
+       
         const newTodo = {
             id: new Date().getTime(),
             done: false,
             description: description,
         }
+        if(newTodo.description.leght <= 2) return;
         onNewTodo(newTodo);
     }
 
