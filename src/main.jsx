@@ -12,6 +12,7 @@ import { Memorize } from './06-memos/Memorize'
 import { MemorizeHook } from './06-memos/MemorizeHook'
 import { Padre } from './07-tarea-memo/Padre'
 import { HooksApp } from './HooksApp'
+import './08-useReducer/intro-reducer.js'
 
 import './index.css'
 
@@ -27,6 +28,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Layout/> */}
     {/* <MemorizeHook/> */}
     {/* <CallbackHook/> */}
-    <Padre />
+    {/* <Padre /> */}
   </React.StrictMode>
 )
