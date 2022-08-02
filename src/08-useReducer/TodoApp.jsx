@@ -4,12 +4,6 @@ import { Todolist } from './Todolist';
 import { todoReducer } from './todoReducer'
 
 const initialState = [
-    // {
-    //     id: new Date().getTime(),
-    //     description: 'Recolectar la piedra del alma',
-    //     done: false
-    // },
-    
     
 ]
 
