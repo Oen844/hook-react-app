@@ -4,23 +4,23 @@ import { Todolist } from './Todolist';
 import { todoReducer } from './todoReducer'
 
 const initialState = [
-    
+
 ]
 
 const init = () => {
-    return JSON.parse ( localStorage.getItem('todos') ) || []
+    return JSON.parse(localStorage.getItem('todos')) || []
 }
 
 export const TodoApp = () => {
 
     const [todos, dispatch] = useReducer(todoReducer, initialState, init);
 
-   
+
     useEffect(() => {
-      localStorage.setItem('todos', JSON.stringify(todos) );
-      
+        localStorage.setItem('todos', JSON.stringify(todos));
+
     }, [todos])
-    
+
 
     const handleNewTodo = (todo) => {
         const action = {
@@ -28,6 +28,15 @@ export const TodoApp = () => {
             payload: todo
         }
         dispatch(action);
+    }
+
+    const handleRemoveTodo = (id) => {
+        const action = {
+            type: '[TODO] Remove Todo',
+            payload: id
+        }
+        dispatch(action);
+        
     }
 
     return (
@@ -38,7 +47,7 @@ export const TodoApp = () => {
 
             <div className="row">
                 <div className="col-7">
-                    <Todolist value={todos} />
+                    <Todolist value={todos} onDeleteTodo={handleRemoveTodo} />
                 </div>
                 <div className="col-5">
                     <h4>Agregar todo</h4>
