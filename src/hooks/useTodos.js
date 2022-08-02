@@ -19,6 +19,10 @@ export const useTodos = () => {
             type: '[TODO] Add Todo',
             payload: todo
         }
+        
+        const isInTodos = todos.find(t => t.description === todo.description);
+        if(isInTodos) return;
+        
 
         dispatch(action);
     }

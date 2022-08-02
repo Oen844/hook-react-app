@@ -16,8 +16,11 @@ export const TodoAdd = ({ onNewTodo }) => {
             done: false,
             description: description,
         }
-        if(newTodo.description.leght <= 2) return;
+        
+        if( description.length < 2 ) return;
+        
         onNewTodo(newTodo);
+        
     }
 
 
