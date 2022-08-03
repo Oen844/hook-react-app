@@ -16,6 +16,8 @@ import { HooksApp } from './HooksApp'
 
 import './index.css'
 import { TodoApp } from './08-useReducer/TodoApp'
+import { MainApp } from './09-useContext/mainApp'
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -30,6 +32,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <MemorizeHook/> */}
     {/* <CallbackHook/> */}
     {/* <Padre /> */}
-    <TodoApp/>
+    {/* <TodoApp/> */}
+    <BrowserRouter>
+      <MainApp />
+
+    </BrowserRouter>
   </React.StrictMode>
 )
