@@ -1,15 +1,18 @@
 
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate, Link } from 'react-router-dom';
 import React from 'react';
 import { HomePage } from './HomePage';
 import { LoginPage } from './LoginPage'
 import { AboutPage } from './AboutPage'
+import { NavBar } from './NavBar';
 
 export const MainApp = () => {
   return (
     <>
       <h1>MainApp</h1>
+      <NavBar/>
       <hr />
+
 
 
       <Routes>
