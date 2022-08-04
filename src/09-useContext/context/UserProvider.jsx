@@ -7,14 +7,13 @@ const user = {
     email: 'papau84@gmail.com'
 }
 
-
 export const UserProvider = ({ children }) => {
 
     const [user, setUser] = useState();
-    
+
     return (
-        //<UserContext.Provider value={{ hola: 'Mundo', user: user}}>
-        <UserContext.Provider value={{ user, setUser}}>
+        
+        <UserContext.Provider value={{ user, setUser }}>
             {children}
         </UserContext.Provider>
     )
