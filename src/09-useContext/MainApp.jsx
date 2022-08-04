@@ -1,28 +1,33 @@
+import { Navigate, Route, Routes, Link } from 'react-router-dom';
 
-import { Route, Routes, Navigate, Link } from 'react-router-dom';
-import React from 'react';
+
 import { HomePage } from './HomePage';
-import { LoginPage } from './LoginPage'
-import { AboutPage } from './AboutPage'
-import { NavBar } from './NavBar';
+import { AboutPage } from './AboutPage';
+import { LoginPage } from './LoginPage';
+import { NavBar} from './NavBar'
+
+
 
 export const MainApp = () => {
   return (
     <>
-      <h1>MainApp</h1>
-      <NavBar/>
-      <hr />
+        <h1>MainApp</h1>
+        {/* <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/login">Login</Link> */}
+        <NavBar/>
+        <hr />
 
 
+        <Routes>
+          <Route path="/" element={ <HomePage /> } />
+          <Route path="about" element={ <AboutPage /> } />
+          <Route path="login" element={ <LoginPage /> } />
 
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='login' element={<LoginPage />} />
-        <Route path='about' element={<AboutPage />} />
+          {/* <Route path="/*" element={ <LoginPage /> } /> */}
+          <Route path="/*" element={ <Navigate to="/about" /> } />
 
-        <Route path='/*' element={ <Navigate to="/about"/>} />
-      </Routes>
-
+        </Routes>
     </>
   )
 }

@@ -16,8 +16,9 @@ import { HooksApp } from './HooksApp'
 
 import './index.css'
 import { TodoApp } from './08-useReducer/TodoApp'
-import { MainApp } from './09-useContext/mainApp'
+
 import { BrowserRouter } from "react-router-dom";
+import { MainApp } from './09-useContext/mainApp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -34,7 +35,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Padre /> */}
     {/* <TodoApp/> */}
     <BrowserRouter>
-      <MainApp />
+      <MainApp/>
 
     </BrowserRouter>
   </React.StrictMode>
